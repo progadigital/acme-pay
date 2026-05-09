@@ -1,0 +1,8 @@
+{
+  "payment_intent_id": "pi_8f4e7c2a991a4d88b1",
+  "amount_cents": 4299,
+  "currency": "USD",
+  "reason": "customer_request",
+  "actor_id": "support_agent_1842"
+}
+

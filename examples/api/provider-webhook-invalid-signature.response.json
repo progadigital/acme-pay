@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "invalid_webhook_signature",
+    "message": "The provider webhook signature could not be verified."
+  }
+}
+

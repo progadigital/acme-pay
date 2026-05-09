@@ -1,0 +1,10 @@
+# Fictional ownership for demo queries.
+
+/src/acme_pay/service.py @acme-payments/payments-core
+/src/acme_pay/ledger.py @acme-payments/ledger
+/src/acme_pay/webhooks.py @acme-payments/platform-integrations
+/src/acme_pay/risk.py @acme-payments/trust-safety
+/docs/security/ @acme-payments/security
+/docs/runbooks/ @acme-payments/on-call
+/infra/ @acme-payments/platform
+

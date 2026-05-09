@@ -1,0 +1,23 @@
+{
+  "merchant_id": "m_new_crossborder_13",
+  "decision": "block",
+  "score": 90,
+  "signals": [
+    {
+      "name": "large_payment",
+      "value": "150000",
+      "weight": 35
+    },
+    {
+      "name": "cross_border_payment_method",
+      "value": "CA",
+      "weight": 25
+    },
+    {
+      "name": "new_merchant",
+      "value": "3",
+      "weight": 30
+    }
+  ]
+}
+

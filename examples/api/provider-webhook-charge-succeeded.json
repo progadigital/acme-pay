@@ -1,0 +1,14 @@
+{
+  "id": "evt_provider_91d82",
+  "type": "charge.succeeded",
+  "created": 1778341401,
+  "data": {
+    "object": {
+      "id": "ch_sandbox_d4c27b32c90f14a820",
+      "payment_intent_id": "pi_8f4e7c2a991a4d88b1",
+      "amount_cents": 4299,
+      "currency": "USD"
+    }
+  }
+}
+

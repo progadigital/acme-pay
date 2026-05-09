@@ -1,0 +1,8 @@
+{
+  "merchant_id": "m_live_7Kp92",
+  "amount_cents": 4299,
+  "currency": "USD",
+  "payment_method_token": "pm_tok_visa_4242",
+  "idempotency_key": "checkout_2026_05_09_order_100381"
+}
+
