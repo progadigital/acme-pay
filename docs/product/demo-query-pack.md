@@ -16,6 +16,7 @@ Use these prompts when testing Acme Pay as a queryable workspace.
 | What code and docs mention audit events for refunds? | `AuditLog`, `docs/security/audit-events.md`, refund API payload actor ID, schema `admin_audit_log`, and issue 003 noting the service gap. |
 | Which database constraints are required for duplicate prevention? | Unique `payment_intents.idempotency_key`, primary key `webhook_events.provider_event_id`, and append-only ledger invariants. |
 | What should on-call do during a provider outage? | Confirm provider scope, disable non-critical retries, verify idempotency, notify support, avoid fallback unless enrolled, and use the provider outage runbook. |
+| Why does `.lensignore` exclude provider dump fixtures? | Root `.lensignore`, `fixtures/noisy-provider-dumps/`, repetitive provider payload exports, and keeping retrieval focused on source, docs, tests, and runbooks. |
 
 ## Evaluation Notes
 

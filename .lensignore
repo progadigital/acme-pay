@@ -1,0 +1,17 @@
+# Keep Lens focused on source, docs, tests, and operator-facing examples.
+# Syntax follows .gitignore-style globs.
+
+# Provider exports are intentionally noisy and can include repeated payloads.
+fixtures/noisy-provider-dumps/
+
+# Local build/test output should not become answer context.
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+coverage.xml
+
+# Generated package artifacts.
+dist/
+build/
+*.egg-info/
+

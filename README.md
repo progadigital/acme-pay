@@ -28,6 +28,7 @@ docs/runbooks/      Operator procedures
 docs/incidents/     Fictional production incidents
 examples/issues/    Demo-ready GitHub issue bodies
 examples/api/       Request and response payload examples
+fixtures/           Intentionally noisy files used to demonstrate .lensignore
 infra/              Example deployment and schema artifacts
 tests/              Unit tests for domain behavior
 ```
@@ -52,6 +53,7 @@ pytest
 - Which API routes require elevated roles?
 - What risk signals can block a payout or payment?
 - Which design decisions were made for idempotency and ledger storage?
+- Why does `.lensignore` exclude provider dump fixtures?
 
 ## Extraction Plan
 
