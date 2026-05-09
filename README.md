@@ -1,39 +1,61 @@
 # Acme Pay
 
-Acme Pay is a fictional payments orchestration service used for demos, search examples, and repository-question workflows.
+Acme Pay is a fictional payments product used as a sample repository for exploring Releap.
 
-The repo is intentionally small, but it is shaped like a real product codebase. It includes API-oriented domain code, provider adapters, ledger behavior, architecture notes, runbooks, security decisions, sample incidents, and issue prompts that make it useful for testing codebase query tools.
+It is intentionally small, but it is shaped like a real software project. The repository includes payment-domain code, API examples, architecture notes, security docs, runbooks, incident writeups, tests, ownership metadata, and a `.lensignore` example.
 
-## Product Surface
+Use it to see how Releap can answer questions across source code, documentation, operational context, and product decisions.
 
-Acme Pay helps marketplace teams:
+## What Acme Pay Models
 
-- create payment intents for card and bank payments
-- route charges to a payment provider
-- record double-entry ledger movements
-- process refunds
-- receive provider webhooks
-- review merchant risk status
-- audit administrative changes
+Acme Pay helps marketplace teams reason about:
 
-## Repo Map
+- payment intents
+- provider charge routing
+- idempotency and duplicate-charge prevention
+- double-entry ledger records
+- refunds
+- provider webhooks
+- merchant risk review
+- audit events
+- payout and provider-outage operations
+
+This is not a real payment processor and should not be used in production.
+
+## Repository Map
 
 ```text
 src/acme_pay/        Core Python package
-docs/architecture/  System design and data-flow notes
-docs/security/      Security model and risk tradeoffs
-docs/product/       Personas and demo query prompts
-docs/support/       Support-facing macros and investigation notes
-docs/runbooks/      Operator procedures
-docs/incidents/     Fictional production incidents
-examples/issues/    Demo-ready GitHub issue bodies
+tests/              Unit tests for payment, webhook, and risk behavior
+docs/architecture/  System design, API contract, ADRs, and .lensignore policy
+docs/security/      Security model, threat model, and audit-event expectations
+docs/runbooks/      Operator procedures for payout, webhook, provider, risk, and ledger issues
+docs/incidents/     Fictional incidents for investigation demos
+docs/product/       Personas, roadmap, non-goals, and suggested demo questions
+docs/support/       Support macros and investigation notes
 examples/api/       Request and response payload examples
-fixtures/           Intentionally noisy files used to demonstrate .lensignore
-infra/              Example deployment and schema artifacts
-tests/              Unit tests for domain behavior
+examples/issues/    Example backlog items
+fixtures/           Noisy fixture content excluded by .lensignore
+infra/              Example schema, metrics, and dashboard notes
 ```
 
-## Quickstart
+## Try It With Releap
+
+Good questions to ask Releap about this repository:
+
+- How does Acme Pay prevent duplicate charges?
+- Where are refunds recorded in the ledger?
+- What happens if the payment provider sends the same webhook twice?
+- Which security gaps would block a production launch?
+- Why is provider fallback routing not automatic?
+- Which risk signals can block a merchant payout?
+- What code and docs mention audit events for refunds?
+- Which database constraints are required for duplicate prevention?
+- Why does `.lensignore` exclude provider dump fixtures?
+
+For a fuller evaluation checklist, see `docs/product/demo-query-pack.md`.
+
+## Local Test Run
 
 ```bash
 python3 -m venv .venv
@@ -42,23 +64,3 @@ pip install -e ".[dev]"
 pytest
 ```
 
-## Demo Questions This Repo Should Answer
-
-- How does Acme Pay prevent duplicate charges?
-- Where are refunds recorded in the ledger?
-- What happens if the payment provider webhook arrives twice?
-- Which parts of the system are in scope for PCI?
-- What operational steps should an on-call engineer take when payouts are delayed?
-- What are the known security gaps before a real production launch?
-- Which API routes require elevated roles?
-- What risk signals can block a payout or payment?
-- Which design decisions were made for idempotency and ledger storage?
-- Why does `.lensignore` exclude provider dump fixtures?
-
-## Extraction Plan
-
-This folder is designed to become its own public repository. Keep all Acme Pay content inside this directory so it can be extracted later with:
-
-```bash
-git subtree split --prefix=demo-repos/acme-pay -b acme-pay-public
-```
